@@ -1,0 +1,144 @@
+.main {
+  min-height: calc(100vh - 64px);
+  background: var(--cream);
+  padding: 40px 20px 80px;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--bark);
+  margin-bottom: 6px;
+}
+
+.pageSub {
+  color: var(--stone);
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.btnBack {
+  background: transparent;
+  border: 1.5px solid var(--linen);
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 13px;
+  color: var(--stone);
+  margin-bottom: 20px;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btnBack:hover {
+  border-color: var(--stone);
+  color: var(--bark);
+}
+
+/* Form Card */
+.formCard {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(237, 232, 223, 0.8);
+}
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 20px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.input {
+  background: var(--cream);
+  border: 1.5px solid var(--linen);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--bark);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.12);
+}
+
+.inputError {
+  border-color: var(--clay) !important;
+}
+
+.errorMsg {
+  font-size: 11px;
+  color: var(--clay);
+}
+
+.btnPrimary {
+  background: var(--sage);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 15px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 24px;
+  transition: all 0.25s;
+  letter-spacing: 0.3px;
+}
+
+.btnPrimary:hover {
+  background: #3d6b4a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(74, 124, 89, 0.28);
+}
+
+@media (max-width: 520px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .fullWidth {
+    grid-column: 1;
+  }
+  .pageTitle {
+    font-size: 26px;
+  }
+}
