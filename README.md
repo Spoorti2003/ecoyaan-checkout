@@ -57,30 +57,6 @@ http://localhost:3000
 | Data Fetching    | `getServerSideProps` (SSR)  |
 | Deployment       | Vercel                      |
 
-## 🏗️ Architectural Choices
-
-### 1. Next.js Pages Router with SSR
-
-Used `getServerSideProps` on the Cart page (`pages/index.js`) to fetch mock data server-side before the page renders. This simulates a real-world scenario where cart data is fetched from an API on the server, improving initial load performance and SEO.
-
-```js
-export async function getServerSideProps() {
-  const data = await Promise.resolve(mockData); // replace with real API fetch
-  return { props: { initialData: data } };
-}
-```
-
-### 2. Context API for Global State
-
-`CheckoutContext` holds two pieces of shared state — `cartData` and `address` — that persist across all pages without prop drilling. This is appropriate for a small-to-medium checkout flow where Redux would be overkill.
-
-### 3. CSS Modules for Scoped Styling
-
-Each component/page has its own `.module.css` file. This avoids class name collisions, keeps styles co-located with their component, and requires zero configuration beyond what Next.js provides out of the box.
-
-### 4. Form Validation & Input Filtering
-
-Validation runs on `onBlur` per field to avoid noisy errors while typing. On submit, all fields are validated at once. Errors are stored in a separate `errors` state object keyed by field name.
 
 ## ✅ Checkout Flow
 
