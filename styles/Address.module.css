@@ -1,0 +1,77 @@
+.main{min-height:calc(100vh - 66px);position:relative;z-index:1;padding:56px 24px calc(var(--sticky-h) + 40px)}
+.container{max-width:760px;margin:0 auto}
+
+select.input{
+color:white;
+background:transparent;
+}
+
+select.input option{
+color:black;
+}
+
+
+.heroSection{text-align:center;margin-bottom:40px;animation:fadeUp 0.7s ease both}
+.stepChip{display:inline-flex;align-items:center;gap:7px;background:rgba(45,186,114,0.1);border:1px solid rgba(45,186,114,0.22);color:var(--emerald);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:30px;margin-bottom:18px}
+.stepChip::before{content:'';width:6px;height:6px;background:var(--emerald);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.pageTitle{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;background:linear-gradient(135deg,var(--text) 40%,var(--mint));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;line-height:1.2}
+.pageSub{color:var(--muted);font-size:15px}
+.addressGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;animation:fadeUp 0.7s ease 0.1s both}
+.addrCard{
+  position:relative;background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;
+  cursor:pointer;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  min-height:140px;box-shadow:var(--shadow-sm);overflow:hidden;
+}
+.addrCard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--emerald),var(--gold));opacity:0;transition:opacity 0.3s}
+.addrCard:hover{border-color:rgba(45,186,114,0.35);transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.addrCard:hover::before{opacity:1}
+.addrCardSelected{border-color:rgba(45,186,114,0.5)!important;background:rgba(45,186,114,0.07)!important;box-shadow:var(--shadow-md),0 0 0 1px rgba(45,186,114,0.3)!important}
+.addrCardSelected::before{opacity:1!important}
+.checkBadge{position:absolute;top:14px;right:14px;width:26px;height:26px;background:var(--grad-green);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(45,186,114,0.4);animation:popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);font-size:11px;color:white}
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.addrIconWrap{width:40px;height:40px;background:rgba(45,186,114,0.1);border:1px solid rgba(45,186,114,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px}
+.addrName{font-weight:700;font-size:14px;color:var(--text);margin-bottom:5px}
+.addrText{font-size:12px;color:var(--muted);line-height:1.6}
+.btnRemove{position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);transition:all 0.2s}
+.addrCardSelected .btnRemove{display:none}
+.btnRemove:hover{background:rgba(224,82,82,0.15);border-color:var(--red);color:var(--red)}
+.addrCardNew{border:1px dashed rgba(45,186,114,0.25);border-radius:var(--r-lg);padding:24px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;gap:10px;transition:all 0.3s;color:var(--muted);background:rgba(255,255,255,0.02)}
+.addrCardNew:hover{border-color:var(--emerald);color:var(--emerald);background:rgba(45,186,114,0.06);transform:translateY(-4px)}
+.plusIcon{width:44px;height:44px;border:1.5px solid currentColor;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:300;transition:all 0.2s}
+.addrCardNew:hover .plusIcon{background:var(--emerald);border-color:var(--emerald);color:white;box-shadow:0 4px 16px rgba(45,186,114,0.4)}
+.addNewText{font-size:13px;font-weight:600}
+.stickyBar{position:fixed;bottom:0;left:0;right:0;background:rgba(6,15,10,0.9);backdrop-filter:blur(20px);border-top:1px solid var(--border);height:var(--sticky-h);display:flex;align-items:center;z-index:50;box-shadow:0 -8px 40px rgba(0,0,0,0.5)}
+.stickyInner{max-width:760px;margin:0 auto;width:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.btnBack{background:transparent;border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:12px 22px;font-size:13px;font-weight:600;color:var(--muted);transition:all 0.2s}
+.btnBack:hover{border-color:var(--emerald);color:var(--emerald);background:rgba(45,186,114,0.08)}
+.secureText{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:5px}
+.btnNext{background:var(--grad-green);color:white;border:none;border-radius:var(--r-md);padding:13px 28px;font-size:13px;font-weight:700;transition:all 0.25s;box-shadow:0 6px 20px rgba(45,186,114,0.35)}
+.btnNext:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 30px rgba(45,186,114,0.45)}
+.btnNext:disabled{opacity:0.35;cursor:not-allowed}
+.modalOverlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.2s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);width:100%;max-width:500px;max-height:90vh;overflow-y:auto;box-shadow:0 40px 80px rgba(0,0,0,0.7);animation:slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1);position:relative}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(45,186,114,0.6),rgba(232,190,90,0.4),transparent);border-radius:var(--r-xl) var(--r-xl) 0 0}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px) scale(0.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modalHeader{display:flex;align-items:center;justify-content:space-between;padding:28px 28px 0}
+.modalTitle{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.modalClose{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:all 0.2s}
+.modalClose:hover{background:rgba(224,82,82,0.15);color:var(--red);transform:rotate(90deg)}
+.modalSub{padding:6px 28px 0;font-size:14px;color:var(--muted)}
+.modalBody{padding:20px 28px;display:flex;flex-direction:column;gap:16px}
+.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formGroup{display:flex;flex-direction:column;gap:6px}
+.label{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--sage)}
+.optional{font-weight:400;text-transform:none;color:var(--muted);letter-spacing:0;font-size:11px}
+.input{background:rgba(255,255,255,0.04);border:1px solid rgba(45,186,114,0.18);border-radius:var(--r-sm);padding:13px 14px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);outline:none;transition:all 0.2s;width:100%}
+.input::placeholder{color:rgba(122,158,138,0.5)}
+.input:focus{border-color:var(--emerald);background:rgba(45,186,114,0.05);box-shadow:0 0 0 3px rgba(45,186,114,0.12)}
+.inputError{border-color:var(--red)!important}
+.errorMsg{font-size:11px;color:var(--red);font-weight:500}
+.modalFooter{padding:0 28px 28px}
+.btnSave{background:var(--grad-green);color:white;border:none;border-radius:var(--r-md);padding:15px;font-size:14px;font-weight:700;width:100%;transition:all 0.25s;box-shadow:0 6px 20px rgba(45,186,114,0.35)}
+.btnSave:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(45,186,114,0.45)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.secureText{display:none}.twoCol{grid-template-columns:1fr}.pageTitle{font-size:30px}}
